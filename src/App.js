@@ -5,24 +5,23 @@ import { Sentence } from "./component/sentence";
 import "./component/main.css";
 function SentenceModifier() {
   const [sentences, setSentences] = useState(jsonData);
-
-  const setStyle = (index, style) => {
+  const setNewSentence = (index, property, value) => {
     const newSentence = [...sentences];
-    newSentence[index][style] = !newSentence[index][style];
+    switch (property) {
+      case "style":
+        newSentence[index][value] = !newSentence[index][value];
+        break;
+      case "fontSize":
+        newSentence[index].fontSize = value + "px";
+        break;
+      case "color":
+        newSentence[index].color = value;
+        break;
+      default:
+        break;
+    }
     setSentences(newSentence);
-  };
-
-  const setFontSize = (index, newSize) => {
-    const newSentence = [...sentences];
-    newSentence[index].fontSize = newSize + "px"; // Add "px" unit here
-    setSentences(newSentence);
-  };
-
-  const setColor = (index, color) => {
-    const newSentence = [...sentences];
-    newSentence[index].color = color;
-    setSentences(newSentence);
-  };
+  };
 
   return (
     <>
@@ -30,9 +29,7 @@ function SentenceModifier() {
     <div className="grid-container">
       <Sentence
         sentences={sentences}
-        setColor={setColor}
-        setFontSize={setFontSize}
-        setStyle={setStyle}
+        setNewSentence={setNewSentence}
       />
     </div>
     </>

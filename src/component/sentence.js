@@ -1,6 +1,6 @@
 import React from "react";
 import "./main.css";
-export const Sentence = ({ sentences, setStyle, setFontSize, setColor }) => {
+export const Sentence = ({ sentences,setNewSentence }) => {
   return (
     <> 
        
@@ -21,19 +21,19 @@ export const Sentence = ({ sentences, setStyle, setFontSize, setColor }) => {
               <div className="btn-container">
                 <button
                   className="bold-btn"
-                  onClick={() => setStyle(index, "bold")}
+                  onClick={() => setNewSentence(index,"style", "bold")}
                 >
                   Bold
                 </button>
                 <button
                   className="italic-btn"
-                  onClick={() => setStyle(index, "italic")}
+                  onClick={() => setNewSentence(index,"style", "italic")}
                 >
                   Italic
                 </button>
                 <button
                   className="underline-btn"
-                  onClick={() => setStyle(index, "underline")}
+                  onClick={() => setNewSentence(index, "style", "underline")}
                 >
                   Underline
                 </button>
@@ -41,13 +41,13 @@ export const Sentence = ({ sentences, setStyle, setFontSize, setColor }) => {
                   type="number"
                   className="num-field"
                   value={parseInt(sentence.fontSize)}
-                  onChange={(e) => setFontSize(index, e.target.value)}
+                  onChange={(e) => setNewSentence(index, "fontSize", e.target.value)}
                 />
                 <input
                   type="text"
                   className="color-field"
                   value={sentence.color}
-                  onChange={(e) => setColor(index, e.target.value)}
+                  onChange={(e) => setNewSentence(index, "color", e.target.value)}
                 />
               </div>
               <div className="sentence">{sentence.text}</div>
