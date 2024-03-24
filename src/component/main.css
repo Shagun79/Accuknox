@@ -1,0 +1,62 @@
+.heading{
+   text-align: center;
+}
+.btn-container{
+  border: 2px solid black;
+  padding: 15px;
+}
+.bold-btn{
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  background-color: antiquewhite;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.italic-btn{
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  background-color: antiquewhite;
+  font-style: italic;
+  cursor: pointer;
+}
+.underline-btn{
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+.grid-container {
+ border: 2px solid black;
+ border-radius: 15px;
+ padding: 20px;
+}
+
+.grid-item {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.no-data {
+  grid-column: span 2;
+}
+
+.num-field{
+  width: 20%;
+  padding: 10px;
+  margin: 5px;
+}
+.color-field{
+  width: 20%;
+  padding: 10px;
+  margin: 5px;
+}
+.sentence{
+  border: 2px solid black;
+  padding: 15px;
+  
+}
